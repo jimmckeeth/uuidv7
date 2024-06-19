@@ -3,10 +3,10 @@
         <ProjectGuid>{358F01F7-37A4-4547-B65C-9E0CB3D5BF73}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="Uuidv7Testing.dproj">
+        <Projects Include="UUIDv7ConsoleApp.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="UUIDv7ConsoleApp.dproj">
+        <Projects Include="Uuidv7Testing.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -17,15 +17,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="Uuidv7Testing">
-        <MSBuild Projects="Uuidv7Testing.dproj"/>
-    </Target>
-    <Target Name="Uuidv7Testing:Clean">
-        <MSBuild Projects="Uuidv7Testing.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Uuidv7Testing:Make">
-        <MSBuild Projects="Uuidv7Testing.dproj" Targets="Make"/>
-    </Target>
     <Target Name="UUIDv7ConsoleApp">
         <MSBuild Projects="UUIDv7ConsoleApp.dproj"/>
     </Target>
@@ -35,14 +26,23 @@
     <Target Name="UUIDv7ConsoleApp:Make">
         <MSBuild Projects="UUIDv7ConsoleApp.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Uuidv7Testing">
+        <MSBuild Projects="Uuidv7Testing.dproj"/>
+    </Target>
+    <Target Name="Uuidv7Testing:Clean">
+        <MSBuild Projects="Uuidv7Testing.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Uuidv7Testing:Make">
+        <MSBuild Projects="Uuidv7Testing.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Uuidv7Testing;UUIDv7ConsoleApp"/>
+        <CallTarget Targets="UUIDv7ConsoleApp;Uuidv7Testing"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Uuidv7Testing:Clean;UUIDv7ConsoleApp:Clean"/>
+        <CallTarget Targets="UUIDv7ConsoleApp:Clean;Uuidv7Testing:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Uuidv7Testing:Make;UUIDv7ConsoleApp:Make"/>
+        <CallTarget Targets="UUIDv7ConsoleApp:Make;Uuidv7Testing:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

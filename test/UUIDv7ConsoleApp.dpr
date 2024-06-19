@@ -8,7 +8,7 @@ uses
 begin
   Randomize;
   try
-    for var i := 0 to 30 do
+    for var i := 0 to 50 do
     begin
       Writeln(GuidToString(GenerateUUIDv7).ToLower);
     end;
