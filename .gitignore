@@ -4,3 +4,4 @@
 *.lps
 /test
 /src/__history
+/src/__recovery
