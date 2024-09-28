@@ -25,7 +25,7 @@ begin
   if Length(aBytes) <> 10 then
     begin
       for i := 0 to 9 do
-        randomBytes[i] := Random($FF);
+        randomBytes[i] := Random($100);
     end
   else
     move(aBytes[0],RandomBytes[0],10);
