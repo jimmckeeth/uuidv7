@@ -7,12 +7,12 @@ uses
   SysUtils, DateUtils;
 
 function GenerateUUIDv7: TGUID;
-function GenerateUUIDv7ex(const aTimestamp:int64;const aBytes:TBytes=[]):TGUID;
+function GenerateUUIDv7ex(const aTimestamp:Int64; const aBytes:TBytes=[]):TGUID;
 
 implementation
 
 
-function GenerateUUIDv7ex(const aTimestamp:int64;const aBytes:TBytes): TGUID;
+function GenerateUUIDv7ex(const aTimestamp:Int64; const aBytes:TBytes): TGUID;
 var
   timestamp: Int64;
   randomBytes: array[0..9] of Byte;
@@ -21,12 +21,12 @@ var
 begin
   FillChar(uuid, SizeOf(uuid), 0);
 
-  // Generate 9 random bytes
   if Length(aBytes) <> 10 then
-    begin
-      for i := 0 to 9 do
-        randomBytes[i] := Random($100);
-    end
+  begin
+    // Generate 9 random bytes
+    for i := 0 to 9 do
+      randomBytes[i] := Random($100);
+  end
   else
     move(aBytes[0],RandomBytes[0],10);
 
