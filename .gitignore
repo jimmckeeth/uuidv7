@@ -1,2 +1,6 @@
 
+/src/lib
+*.lpi
+*.lps
+/test
 /src/__history
